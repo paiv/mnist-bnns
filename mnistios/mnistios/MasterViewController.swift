@@ -29,7 +29,7 @@ class MasterViewController: UITableViewController {
         case 0:
             cell.textLabel?.text = "One by one"
         case 1:
-            cell.textLabel?.text = "Predict everything"
+            cell.textLabel?.text = "Recognize pages"
         default:
             break
         }
@@ -41,6 +41,8 @@ class MasterViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             performSegue(withIdentifier: "one-by-one", sender: self)
+        case 1:
+            performSegue(withIdentifier: "batch", sender: self)
         default:
             tableView.deselectRow(at: indexPath, animated: false)
         }

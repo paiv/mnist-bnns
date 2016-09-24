@@ -63,6 +63,27 @@ struct MnistImage {
         return reader.bytes(in: offset..<(offset + stride))
     }
     
+    func samples(range: Range<Int>) -> Data {
+        let stride = imageSize.width * imageSize.height
+        let header = 16
+        let offset = header
+        return reader.bytes(in: (offset + stride * range.lowerBound) ..< (offset + stride * range.upperBound))
+    }
+    
+    func samples(indexes: [Int]) -> Data {
+        let stride = imageSize.width * imageSize.height
+        let header = 16
+        
+        var data = Data(count: stride * indexes.count)
+        
+        for i in 0..<indexes.count {
+            let offset = header + stride * indexes[i]
+            let bytes = reader.bytes(in: offset..<(offset + stride))
+            data.replaceSubrange(stride * i..<stride * (i + 1), with: bytes)
+        }
+        return data
+    }
+    
     func sampleInverse(index: Int) -> Data {
         let data = NSMutableData(data: sample(index: index) as Data)
         
@@ -83,12 +104,28 @@ struct MnistImage {
         return image(data: sample(index: index), width: imageSize.width, height: imageSize.height)
     }
     
+    func transparentImage(index: Int) -> UIImage {
+        return transparentImage(data: sample(index: index), width: imageSize.width, height: imageSize.height)
+    }
+    
     private func image(data: Data, width: Int, height: Int) -> UIImage {
         let grayscale = CGColorSpaceCreateDeviceGray()
         let bitmapInfo = CGBitmapInfo()
         let dataProvider = CGDataProvider(data: data as CFData)!
         
         let cgimg = CGImage(width: width, height: height, bitsPerComponent: 8, bitsPerPixel: 8, bytesPerRow: width, space: grayscale, bitmapInfo: bitmapInfo, provider: dataProvider, decode: nil, shouldInterpolate: true, intent: .defaultIntent)!
+        
+        return UIImage(cgImage: cgimg)
+    }
+
+    private func transparentImage(data: Data, width: Int, height: Int) -> UIImage {
+        let rgbData = Data(bytes: data.flatMap { [0, 0, 0, $0] })
+
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo: CGBitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.last.rawValue)
+        let dataProvider = CGDataProvider(data: rgbData as CFData)!
+
+        let cgimg = CGImage(width: width, height: height, bitsPerComponent: 8, bitsPerPixel: 32, bytesPerRow: width * 4, space: colorSpace, bitmapInfo: bitmapInfo, provider: dataProvider, decode: nil, shouldInterpolate: false, intent: .defaultIntent)!
         
         return UIImage(cgImage: cgimg)
     }

@@ -17,6 +17,7 @@ fileprivate protocol ViewModelDelegate : class {
 fileprivate class ViewModel {
 
     let dataset = MnistDataset()
+    let ai = MnistNet()
     var predictions: [Int: Int] = [:]
 
     weak var delegate: ViewModelDelegate?
@@ -29,8 +30,15 @@ fileprivate class ViewModel {
     
     func image(for index: Int) -> UIImage {
         switch predictions[index] {
-        case .some:
-            return dataset.samples.invertedImage(index: index)
+        case let .some(predictedLabel):
+            let matched = dataset.labels.label(index: index) == predictedLabel
+            if !matched {
+                let img = dataset.samples.transparentImage(index: index)
+                return img.withRenderingMode(.alwaysTemplate)
+            }
+            else {
+                return dataset.samples.invertedImage(index: index)
+            }
         case .none:
             return dataset.samples.image(index: index)
         }
@@ -46,7 +54,7 @@ fileprivate class ViewModel {
     }
     
     func predictLabel(for index: Int) {
-        let label = 4
+        let label = ai.predict(image: dataset.samples.sample(index: index))
         predictions[index] = label
         
         delegate?.viewModel(viewModel: self, didPredict: String(label), for: index)
@@ -60,6 +68,8 @@ class OneByOneViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView?.register(UINib(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: "someCell")
         
         viewModel = ViewModel()
         viewModel.delegate = self
@@ -89,6 +99,7 @@ extension OneByOneViewController {
         let label = viewModel.label(for: indexPath.row)
         let predictedLabel = viewModel.predictedLabel(for: indexPath.row)
         
+        cell.index = "#\(indexPath.row)"
         cell.image = image
         cell.title = label
         cell.subtitle = predictedLabel

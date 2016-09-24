@@ -1,0 +1,5 @@
+
+PREFIX="/opt/local/var/miniconda"
+export PATH="${PREFIX}/miniconda2/bin:$PATH"
+
+source activate tensorflow

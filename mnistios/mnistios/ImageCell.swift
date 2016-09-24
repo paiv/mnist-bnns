@@ -13,6 +13,7 @@ class ImageCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var indexLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +27,15 @@ class ImageCell: UICollectionViewCell {
         }
         set {
             imageView.image = newValue
+        }
+    }
+    
+    var index: String? {
+        get {
+            return indexLabel.text
+        }
+        set {
+            indexLabel.text = newValue
         }
     }
     
