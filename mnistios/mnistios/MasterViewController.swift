@@ -19,7 +19,7 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -30,6 +30,8 @@ class MasterViewController: UITableViewController {
             cell.textLabel?.text = "One by one"
         case 1:
             cell.textLabel?.text = "Recognize pages"
+        case 2:
+            cell.textLabel?.text = "Draw"
         default:
             break
         }
@@ -43,6 +45,8 @@ class MasterViewController: UITableViewController {
             performSegue(withIdentifier: "one-by-one", sender: self)
         case 1:
             performSegue(withIdentifier: "batch", sender: self)
+        case 2:
+            performSegue(withIdentifier: "draw", sender: self)
         default:
             tableView.deselectRow(at: indexPath, animated: false)
         }

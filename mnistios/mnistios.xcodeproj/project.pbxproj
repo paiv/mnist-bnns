@@ -15,6 +15,10 @@
 		C440F4EE1D85DD6400D4AFDB /* MnistNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440F4ED1D85DD6400D4AFDB /* MnistNet.swift */; };
 		C45490491D96BA8A0011B9AC /* BatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45490481D96BA8A0011B9AC /* BatchViewController.swift */; };
 		C454904D1D96BE600011B9AC /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C454904B1D96BE600011B9AC /* ImageCell.xib */; };
+		C48C64141D98501F00A82678 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48C64121D98501F00A82678 /* DrawingViewController.swift */; };
+		C48C64151D98501F00A82678 /* DrawingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C48C64131D98501F00A82678 /* DrawingViewController.xib */; };
+		C48C64171D98529C00A82678 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48C64161D98529C00A82678 /* CanvasView.swift */; };
+		C48C64191D9870E300A82678 /* ImageMagic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48C64181D9870E300A82678 /* ImageMagic.swift */; };
 		C4E383E61D7362F000796D53 /* OneByOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E383E51D7362F000796D53 /* OneByOneViewController.swift */; };
 		C4E383ED1D7366A300796D53 /* MnistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E383EC1D7366A300796D53 /* MnistData.swift */; };
 		C4E383EF1D736FEA00796D53 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E383EE1D736FEA00796D53 /* ImageCell.swift */; };
@@ -32,6 +36,10 @@
 		C440F4ED1D85DD6400D4AFDB /* MnistNet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MnistNet.swift; sourceTree = "<group>"; };
 		C45490481D96BA8A0011B9AC /* BatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatchViewController.swift; sourceTree = "<group>"; };
 		C454904B1D96BE600011B9AC /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		C48C64121D98501F00A82678 /* DrawingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
+		C48C64131D98501F00A82678 /* DrawingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingViewController.xib; sourceTree = "<group>"; };
+		C48C64161D98529C00A82678 /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		C48C64181D9870E300A82678 /* ImageMagic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageMagic.swift; sourceTree = "<group>"; };
 		C4B73AC61D870E140069F447 /* mnistios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mnistios-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4E383E51D7362F000796D53 /* OneByOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneByOneViewController.swift; sourceTree = "<group>"; };
 		C4E383EC1D7366A300796D53 /* MnistData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MnistData.swift; sourceTree = "<group>"; };
@@ -75,8 +83,12 @@
 				C416EFD71D735A3B00D484A5 /* MasterViewController.swift */,
 				C4E383E51D7362F000796D53 /* OneByOneViewController.swift */,
 				C45490481D96BA8A0011B9AC /* BatchViewController.swift */,
+				C48C64121D98501F00A82678 /* DrawingViewController.swift */,
+				C48C64131D98501F00A82678 /* DrawingViewController.xib */,
+				C48C64161D98529C00A82678 /* CanvasView.swift */,
 				C4E383EE1D736FEA00796D53 /* ImageCell.swift */,
 				C454904B1D96BE600011B9AC /* ImageCell.xib */,
+				C48C64181D9870E300A82678 /* ImageMagic.swift */,
 				C4E383EC1D7366A300796D53 /* MnistData.swift */,
 				C440F4ED1D85DD6400D4AFDB /* MnistNet.swift */,
 				C416EFC91D73582900D484A5 /* Main.storyboard */,
@@ -160,6 +172,7 @@
 			files = (
 				C416EFD01D73582900D484A5 /* LaunchScreen.storyboard in Resources */,
 				C454904D1D96BE600011B9AC /* ImageCell.xib in Resources */,
+				C48C64151D98501F00A82678 /* DrawingViewController.xib in Resources */,
 				C416EFCD1D73582900D484A5 /* Assets.xcassets in Resources */,
 				C416EFCB1D73582900D484A5 /* Main.storyboard in Resources */,
 			);
@@ -174,11 +187,14 @@
 			files = (
 				C416EFD81D735A3B00D484A5 /* MasterViewController.swift in Sources */,
 				C440F4EE1D85DD6400D4AFDB /* MnistNet.swift in Sources */,
+				C48C64171D98529C00A82678 /* CanvasView.swift in Sources */,
 				C4EC53A91D8EAC63001684F0 /* BnnsBuilder.swift in Sources */,
 				C416EFC41D73582900D484A5 /* AppDelegate.swift in Sources */,
+				C48C64141D98501F00A82678 /* DrawingViewController.swift in Sources */,
 				C4E383E61D7362F000796D53 /* OneByOneViewController.swift in Sources */,
 				C45490491D96BA8A0011B9AC /* BatchViewController.swift in Sources */,
 				C4E383ED1D7366A300796D53 /* MnistData.swift in Sources */,
+				C48C64191D9870E300A82678 /* ImageMagic.swift in Sources */,
 				C4E383EF1D736FEA00796D53 /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

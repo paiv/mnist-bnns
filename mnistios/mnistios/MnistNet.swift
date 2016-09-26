@@ -69,9 +69,13 @@ class MnistNet {
     }
     
     func predict(image: Data) -> Int {
+        return predict(input: read(image: image))
+    }
+    
+    func predict(input: [Float32]) -> Int {
         
-        let outputs = network.apply(input: read(image: image))
-        
+        let outputs = network.apply(input: input)
+
         return outputs.index(of: outputs.max()!)!
     }
     

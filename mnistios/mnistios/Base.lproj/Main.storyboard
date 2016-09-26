@@ -44,6 +44,7 @@
                     <connections>
                         <segue destination="w4e-wT-sJY" kind="show" identifier="one-by-one" id="H1S-CS-DIN"/>
                         <segue destination="NZR-xc-fnc" kind="show" identifier="batch" id="tb2-Pb-Cme"/>
+                        <segue destination="eJZ-vg-5Kn" kind="show" identifier="draw" id="pgk-Mt-XjS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ufn-ho-Edy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -75,6 +76,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGq-zc-MCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="424" y="-224"/>
+        </scene>
+        <!--Draw-->
+        <scene sceneID="Sz1-LS-AYJ">
+            <objects>
+                <viewController id="eJZ-vg-5Kn" customClass="DrawingViewController" customModule="mnistios" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Draw" id="Exl-Z6-Ygm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VFW-4i-tJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2169" y="-225"/>
         </scene>
         <!--Recognize page-->
         <scene sceneID="Pl8-Xa-shq">
