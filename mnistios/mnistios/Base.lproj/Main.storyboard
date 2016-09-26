@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--BNNS-->
+        <!--MNIST on BNNS-->
         <scene sceneID="btJ-bQ-vU8">
             <objects>
                 <tableViewController id="qse-Fd-wga" customClass="MasterViewController" customModule="mnistios" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,7 +38,7 @@
                             <outlet property="delegate" destination="qse-Fd-wga" id="uVr-4u-Puz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="BNNS" id="7Bd-W7-VKY">
+                    <navigationItem key="navigationItem" title="MNIST on BNNS" id="7Bd-W7-VKY">
                         <barButtonItem key="backBarButtonItem" title=" " id="G4g-uh-B1k"/>
                     </navigationItem>
                     <connections>
