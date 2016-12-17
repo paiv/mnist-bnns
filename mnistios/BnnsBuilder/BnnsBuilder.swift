@@ -218,7 +218,7 @@ class BnnsBuilder {
     private class MaxPoolingLayerDescriptor : LayerDescriptor {
         var kernel: (width: Int, height: Int)!
         
-        private override func build() -> BnnsFilter? {
+        override func build() -> BnnsFilter? {
             
             let stride = (x: kernel.width, y: kernel.height)
             
@@ -249,7 +249,7 @@ class BnnsBuilder {
         var bias: [Float32]!
         var activation: BNNSActivationFunction!
         
-        private override func build() -> BnnsFilter? {
+        override func build() -> BnnsFilter? {
             
             var hiddenIn = BNNSVectorDescriptor(size: input.size, data_type: dataType, data_scale: 0, data_bias: 0)
             var hiddenOut = BNNSVectorDescriptor(size: output.size, data_type: dataType, data_scale: 0, data_bias: 0)
