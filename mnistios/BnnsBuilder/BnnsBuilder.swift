@@ -165,7 +165,7 @@ class BnnsBuilder {
     
     func build() -> BnnsNetwork? {
         let building = descriptors.map { $0.build() }
-        let network = building.flatMap{$0}
+        let network = building.compactMap{$0}
         
         guard network.count == building.count else { return nil }
         

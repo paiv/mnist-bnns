@@ -101,7 +101,7 @@ class BatchViewController: UICollectionViewController {
         navigationItem.rightBarButtonItem = predictButton
         self.predictButton = predictButton
         
-        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        let spinner = UIActivityIndicatorView(style: .gray)
         self.spinner = spinner
         let spinnerButton = UIBarButtonItem(customView: spinner)
         self.spinnerButton = spinnerButton
