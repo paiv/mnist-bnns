@@ -86,7 +86,7 @@ class BnnsBuilder {
     
     var dataType: BNNSDataType {
         get {
-            return BNNSDataTypeFloat32
+            return BNNSDataType.float
         }
     }
     
@@ -95,7 +95,7 @@ class BnnsBuilder {
     private var inputShape: BnnsShape!
     private var kernel: (width: Int, height: Int)!
     private var stride = (x: 1, y: 1)
-    private var activation = BNNSActivationFunctionRectifiedLinear
+    private var activation = BNNSActivationFunction.rectifiedLinear
     
     func shape(width: Int, height: Int, channels: Int) -> Self {
         let shape = BnnsShape(width: width, height: height, channels: channels)
@@ -231,9 +231,9 @@ class BnnsBuilder {
             var imageStackOut = BNNSImageStackDescriptor(width: output.width, height: output.height, channels: output.channels, row_stride: output.width, image_stride: output.width * output.height, data_type: dataType, data_scale: 0, data_bias: 0)
             
             let bias_data = BNNSLayerData()
-            let activ = BNNSActivation(function: BNNSActivationFunctionIdentity, alpha: 0, beta: 0)
+            let activ = BNNSActivation(function: BNNSActivationFunction.identity, alpha: 0, beta: 0)
             
-            var layerParams = BNNSPoolingLayerParameters(x_stride: stride.x, y_stride: stride.y, x_padding: pad.x, y_padding: pad.y, k_width: kernel.width, k_height: kernel.height, in_channels: input.channels, out_channels: output.channels, pooling_function: BNNSPoolingFunctionMax, bias: bias_data, activation: activ)
+            var layerParams = BNNSPoolingLayerParameters(x_stride: stride.x, y_stride: stride.y, x_padding: pad.x, y_padding: pad.y, k_width: kernel.width, k_height: kernel.height, in_channels: input.channels, out_channels: output.channels, pooling_function: BNNSPoolingFunction.max, bias: bias_data, activation: activ)
             
             var filterParams = defaultFilterParameters()
             
