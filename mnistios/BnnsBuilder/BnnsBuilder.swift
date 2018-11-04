@@ -206,9 +206,7 @@ class BnnsBuilder {
             
             var layerParams = BNNSConvolutionLayerParameters(x_stride: stride.x, y_stride: stride.y, x_padding: pad.x, y_padding: pad.y, k_width: kernel.width, k_height: kernel.height, in_channels: input.channels, out_channels: output.channels, weights: weights_data, bias: bias_data, activation: activ)
             
-            var filterParams = defaultFilterParameters()
-            
-            guard let convolve = BNNSFilterCreateConvolutionLayer(&imageStackIn, &imageStackOut, &layerParams, &filterParams)
+            guard let convolve = BNNSFilterCreateConvolutionLayer(&imageStackIn, &imageStackOut, &layerParams, nil)
                 else { return nil }
             
             return BnnsFilter(filter: convolve, shape: output)
@@ -235,9 +233,7 @@ class BnnsBuilder {
             
             var layerParams = BNNSPoolingLayerParameters(x_stride: stride.x, y_stride: stride.y, x_padding: pad.x, y_padding: pad.y, k_width: kernel.width, k_height: kernel.height, in_channels: input.channels, out_channels: output.channels, pooling_function: BNNSPoolingFunction.max, bias: bias_data, activation: activ)
             
-            var filterParams = defaultFilterParameters()
-            
-            guard let pool = BNNSFilterCreatePoolingLayer(&imageStackIn, &imageStackOut, &layerParams, &filterParams)
+            guard let pool = BNNSFilterCreatePoolingLayer(&imageStackIn, &imageStackOut, &layerParams, nil)
                 else { return nil }
             
             return BnnsFilter(filter: pool, shape: output)
@@ -260,9 +256,7 @@ class BnnsBuilder {
             
             var layerParams = BNNSFullyConnectedLayerParameters(in_size: input.size, out_size: output.size, weights: weights_data, bias: bias_data, activation: activ)
             
-            var filterParams = defaultFilterParameters()
-            
-            guard let layer = BNNSFilterCreateFullyConnectedLayer(&hiddenIn, &hiddenOut, &layerParams, &filterParams)
+            guard let layer = BNNSFilterCreateFullyConnectedLayer(&hiddenIn, &hiddenOut, &layerParams, nil)
                 else { return nil }
             
             return BnnsFilter(filter: layer, shape: output)

@@ -40,12 +40,10 @@
 		C48C64131D98501F00A82678 /* DrawingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingViewController.xib; sourceTree = "<group>"; };
 		C48C64161D98529C00A82678 /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		C48C64181D9870E300A82678 /* ImageMagic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageMagic.swift; sourceTree = "<group>"; };
-		C4B73AC61D870E140069F447 /* mnistios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mnistios-Bridging-Header.h"; sourceTree = "<group>"; };
 		C4E383E51D7362F000796D53 /* OneByOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneByOneViewController.swift; sourceTree = "<group>"; };
 		C4E383EC1D7366A300796D53 /* MnistData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MnistData.swift; sourceTree = "<group>"; };
 		C4E383EE1D736FEA00796D53 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		C4EC53A81D8EAC63001684F0 /* BnnsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BnnsBuilder.swift; sourceTree = "<group>"; };
-		C4EC53AA1D8EB210001684F0 /* BnnsHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BnnsHelper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +93,6 @@
 				C416EFCC1D73582900D484A5 /* Assets.xcassets */,
 				C416EFCE1D73582900D484A5 /* LaunchScreen.storyboard */,
 				C416EFD11D73582900D484A5 /* Info.plist */,
-				C4B73AC61D870E140069F447 /* mnistios-Bridging-Header.h */,
 			);
 			path = mnistios;
 			sourceTree = "<group>";
@@ -104,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				C4EC53A81D8EAC63001684F0 /* BnnsBuilder.swift */,
-				C4EC53AA1D8EB210001684F0 /* BnnsHelper.h */,
 			);
 			path = BnnsBuilder;
 			sourceTree = "<group>";
@@ -340,7 +336,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = paiv.mnistios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "mnistios/mnistios-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
@@ -356,7 +351,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = paiv.mnistios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "mnistios/mnistios-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
