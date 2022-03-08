@@ -1,7 +1,7 @@
 
 # Demo MNIST on iOS BNNS
 
-[![standwithukraine](https://user-images.githubusercontent.com/196601/157240130-cc166948-7456-485f-b179-ee883c64edfc.svg)](https://ukrainewar.carrd.co/)
+[![standwithukraine](https://user-images.githubusercontent.com/196601/157244309-ab5e2fec-e350-4d13-a0b3-d670de9ca161.svg)](https://ukrainewar.carrd.co/)
 
 Importing deep convolutional network from [TensorFlow: Deep MNIST for Experts][TF-TUT] to iOS 10 BNNS
 
